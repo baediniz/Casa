@@ -13,7 +13,7 @@ namespace trabalhoEmprestimo
 
         public virtual void ContaBancaria()
         {
-            Console.WriteLine("pessoas costumam tem contas no banco");
+            Console.WriteLine("pessoas costumam ter contas no banco");
         }
         public virtual void Emprestimo()
         {
