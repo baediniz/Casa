@@ -8,7 +8,7 @@ namespace trabalhoEmprestimo
 {
     public class Pessoa
     {
-        public string cor { get; set; } //a mudar
+        public string nome { get; set; } //a mudar
         public string idade { get; set; } //a mudar
 
         public virtual void ContaBancaria()
