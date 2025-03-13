@@ -46,11 +46,12 @@
             btnSubtracao = new Button();
             btnMultiplicacao = new Button();
             btnDivisao = new Button();
+            lblOperacao = new Label();
             SuspendLayout();
             // 
             // txtResultado
             // 
-            txtResultado.Location = new Point(109, 44);
+            txtResultado.Location = new Point(114, 44);
             txtResultado.Name = "txtResultado";
             txtResultado.Size = new Size(112, 23);
             txtResultado.TabIndex = 0;
@@ -225,11 +226,20 @@
             btnDivisao.UseVisualStyleBackColor = true;
             btnDivisao.Click += btnDivisao_Click;
             // 
+            // lblOperacao
+            // 
+            lblOperacao.AutoSize = true;
+            lblOperacao.Location = new Point(211, 52);
+            lblOperacao.Name = "lblOperacao";
+            lblOperacao.Size = new Size(0, 15);
+            lblOperacao.TabIndex = 18;
+            // 
             // frmCalculadora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(344, 379);
+            Controls.Add(lblOperacao);
             Controls.Add(btnDivisao);
             Controls.Add(btnMultiplicacao);
             Controls.Add(btnSubtracao);
@@ -250,6 +260,7 @@
             Controls.Add(txtResultado);
             Name = "frmCalculadora";
             Text = "Calculadora";
+            Load += frmCalculadora_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,5 +285,6 @@
         private Button btnSubtracao;
         private Button btnMultiplicacao;
         private Button btnDivisao;
+        private Label lblOperacao;
     }
 }

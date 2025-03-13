@@ -7,6 +7,9 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+        public decimal Resultado { get; set; }
+        public decimal Valor { get; set; }
+
         private Operacao OperacaoSelec { get; set; }
         private enum Operacao
         {
@@ -74,25 +77,34 @@ namespace WinFormsApp1
         private void btnSoma_Click(object sender, EventArgs e)
         {
             OperacaoSelec = Operacao.Soma;
+            Valor = Convert.ToDecimal(txtResultado.Text);
             txtResultado.Text = "";
+            lblOperacao.Text = "+";
+
         }
 
         private void btnSubtracao_Click(object sender, EventArgs e)
         {
             OperacaoSelec = Operacao.Subtracao;
+            Valor = Convert.ToDecimal(txtResultado.Text);
             txtResultado.Text = "";
+            lblOperacao.Text = "-";
         }
 
         private void btnMultiplicacao_Click(object sender, EventArgs e)
         {
             OperacaoSelec = Operacao.Multiplicacao;
+            Valor = Convert.ToDecimal(txtResultado.Text);
             txtResultado.Text = "";
+            lblOperacao.Text = "x";
         }
 
         private void btnDivisao_Click(object sender, EventArgs e)
         {
             OperacaoSelec = Operacao.Divisao;
+            Valor = Convert.ToDecimal(txtResultado.Text);
             txtResultado.Text = "";
+            lblOperacao.Text = "/";
         }
 
         private void btnIgual_Click(object sender, EventArgs e)
@@ -100,18 +112,26 @@ namespace WinFormsApp1
             switch (OperacaoSelec)
             {
                 case Operacao.Soma:
-                   
+                    Resultado = Valor + Convert.ToDecimal(txtResultado.Text);
                     break;
                 case Operacao.Subtracao:
-                    
+                    Resultado = Valor - Convert.ToDecimal(txtResultado.Text);
                     break;
                 case Operacao.Multiplicacao:
-                    
+                    Resultado = Valor * Convert.ToDecimal(txtResultado.Text);
                     break;
                 case Operacao.Divisao:
-                    
+                    Resultado = Valor / Convert.ToDecimal(txtResultado.Text);
                     break;
             }
+
+            txtResultado.Text = Resultado.ToString();
+            lblOperacao.Text = "=";
+        }
+
+        private void frmCalculadora_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
