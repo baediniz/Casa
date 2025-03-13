@@ -8,12 +8,12 @@ namespace trabalhoEmprestimo
 {
     public class Pessoa
     {
-        public string cor { get; set; } //a mudar
-        public string idade { get; set; } //a mudar
+        public string nome { get; set; } //a mudar
+        public string documento { get; set; } //a mudar
 
         public virtual void ContaBancaria()
         {
-            Console.WriteLine("pessoas costumam tem contas no banco");
+            Console.WriteLine("pessoas costumam ter contas no banco");
         }
         public virtual void Emprestimo()
         {
